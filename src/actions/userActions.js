@@ -54,7 +54,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/v1/login",
+      "/api/v1/login",{withCredentials:true},
       { email, password },
       config
     );
@@ -172,6 +172,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
 
     const { data } = await axios.put(
       `${process.env.REACT_APP_API}/api/v1/password/update`,
+      {withCredentials:true},
       passwords,
       config
     );
@@ -262,7 +263,7 @@ export const allUsers = () => async (dispatch) => {
 
 
 
-      const { data } = await axios.get('/api/v1/admin/users')
+      const { data } = await axios.get('/api/v1/admin/users',{withCredentials:true})
 
 
 
@@ -312,7 +313,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
 
 
 
-      const { data } = await axios.put(`${process.env.REACT_APP_API}/api/v1/admin/user/${id}`, userData, config)
+      const { data } = await axios.put(`${process.env.REACT_APP_API}/api/v1/admin/user/${id}`,{withCredentials:true}, userData, config)
 
 
 
@@ -354,7 +355,7 @@ export const getUserDetails = (id) => async (dispatch) => {
 
 
 
-      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/admin/user/${id}`)
+      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/admin/user/${id}`,{withCredentials:true},)
 
 
 
@@ -392,7 +393,7 @@ export const deleteUser = (id) => async (dispatch) => {
 
 
 
-      const { data } = await axios.delete(`${process.env.REACT_APP_API}/api/v1/admin/user/${id}`)
+      const { data } = await axios.delete(`${process.env.REACT_APP_API}/api/v1/admin/user/${id}`,{withCredentials:true},)
 
 
 
