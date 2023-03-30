@@ -115,8 +115,8 @@ const Header = () => {
               </div>
             </div>
           ) : (
-         (
-              <Link to="/login" className="btn ml-4" id="login_btn">
+              (
+              <Link to="/login"  id="login_btn">
                 Login
               </Link>
             )
