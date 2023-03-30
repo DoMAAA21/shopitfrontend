@@ -237,7 +237,7 @@ element={
       </Routes>
       
       <ToastContainer />
-      { (!isAuthenticated) && <Footer />}
+      {!loading && (!isAuthenticated || user.role !== "admin") && <Footer />}
     </div>
   );
 }
